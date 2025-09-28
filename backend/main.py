@@ -34,7 +34,7 @@ def get_db_connection():
         )
         return conn
     except mysql.connector.Error as e:
-        raise HTTPException(status_code=500, detail=f"Database connection failed: {str(e)}"
+        raise HTTPException(status_code=500, detail=f"Database connection failed: {str(e)}")
 
 class LoginRequest(BaseModel):
     password: str

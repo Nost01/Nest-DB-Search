@@ -2,10 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-=======
   "homepage": "/app",
->>>>>>> aa4b3c5b44a010cc82bb793eaa3acfcd7e16ca18
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -45,11 +42,7 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-<<<<<<< HEAD
-    "tailwindcss": "^3.4.17"
-=======
     "tailwindcss": "^3.4.17",
     "webpack-dev-server": "^3.11.3"
->>>>>>> aa4b3c5b44a010cc82bb793eaa3acfcd7e16ca18
   }
 }
