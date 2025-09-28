@@ -8,15 +8,9 @@ export default function Login({ onLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
-    if (!password.trim()) return; // prevent empty submission
-    onLogin(password);            // send password to App.js
-    setPassword("");              // optional: clear field after submit
-=======
     if (!password.trim()) return; 
     onLogin(password);            
     setPassword("");              
->>>>>>> aa4b3c5b44a010cc82bb793eaa3acfcd7e16ca18
   };
 
   return (
