@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from './components/login';
 import SearchPage from './pages/SearchPage';
+import './index.css';
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

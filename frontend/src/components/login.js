@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "../styles.css";
+import "../styles.css"; 
+import '../index.css';
 import nestImage from "./NEST-Horizontal-Logo-01-1030x321.png";
 
 export default function Login({ onLogin }) {
@@ -14,7 +15,7 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="login-container">
+    <div class="pt-[150px] w-full min-h-screen overflow-x-hidden box-border h-screen w-screen bg-gradient-to-l from-gray-200 via-yellow-200 to-gray-200">
       <img src={nestImage} alt="Nest Logo" className="nest-logo"/>
       <div className="login-box">
         <h2>Enter Password</h2>

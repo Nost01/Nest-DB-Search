@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import EmployeeTable from '../components/EmployeeTable';
 import "../styles.css";
+import '../index.css';
 import nestImage from "../components/NEST-Horizontal-Logo-01-1030x321.png";
 
 
@@ -49,7 +50,7 @@ const handleClear = () => {
 };
 
 return (
-    <div className="search-container">
+    <div class="pt-[150px] w-full min-h-screen overflow-x-hidden box-border h-screen w-screen bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100">
         <img src={nestImage} alt="Nest Logo" className="nest-logo"/>
         <div className="search-box">
             <h1>Nest Database Search</h1>
@@ -75,3 +76,5 @@ return (
 );
 
 }
+
+/* class="pt-[150px] w-full min-h-screen overflow-x-hidden box-border h-screen w-screen bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100" */
