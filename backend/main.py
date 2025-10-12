@@ -39,6 +39,10 @@ def get_db_connection():
 class LoginRequest(BaseModel):
     password: str
 
+class RegisterRequest(BaseModel):
+    username: str
+    password: str
+
 @app.post("/login")
 def login(data: LoginRequest):
     hashed_password = os.getenv("APP_PASSWORD_HASH").encode('utf-8')
@@ -47,8 +51,32 @@ def login(data: LoginRequest):
     else:
         raise HTTPException(status_code=401, detail="Invalid password")
     
-# Search Endpoints
+@app.post("/register")
+def register(data: RegisterRequest):
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
 
+    # Checking for duplicate usernames
+    cursor.execute("SELECT * FROM Users WHERE username = %s", (data.username,))
+    if cursor.fetchone():
+        cursor.close()
+        conn.close()
+        raise HTTPException(status_code=400, detail="Username already exists")
+    
+    # Hash the password for security purposes
+    hashed_password = bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt())
+
+    # Command to insert new users
+    cursor.execute("INSERT INTO Users (username, password) VALUES (%s, %s)", (data.username, hashed_password.decode('utf-8')))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return {"message": "User registered successfully"}
+    
+    
+# Search Endpoint
 @app.get("/search/1.0")
 def smart_search(keyword: str = Query(..., description="Search keywords separated by spaces")):
     conn = get_db_connection()
