@@ -36,3 +36,10 @@ Option B (FastAPI all-in-one):
 - Restrict **CORS** in `main.py` to company domain.
 - Run with **HTTPS** enabled.
 
+
+
+Add user to database
+Registration feature
+Ngrok script
+User Dashboard
+Styling++
